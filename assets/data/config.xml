@@ -1,0 +1,53 @@
+<game margin_x="30"
+	  margin_y="25"
+	  speed="0.01"
+	  paralaxCam1="0.85"
+	  paralaxCam2="0.5"
+	  paralaxCam3="0.55">
+	<nape fixed_timestamp="0" 
+		  death_loop_margin="25"
+		  trans_y="500">
+		<gravity x="0" y="260"/>
+		<accuracy veloc_i="6" pos_i="6"/>
+		<space width="640"
+			   height="400"/>
+	</nape>
+
+	<player movSpeed="130" 
+		    jumpSpeed="240" 
+		    accSpeed="0.08"
+		    style="fill:#3498db;"
+		    radius="20"
+		    ang_mov="0"
+		    max_ang_speed="3"
+		    init_x="320" init_y="200"
+		    >
+		<gun height="5" 
+			 percent="50"
+			 bulletLifespan="3000"
+			 blockFreq="350"
+			 roundFreq="250"
+			 chargeFreq="150">
+
+			 <def style="fill:#bdc3c7;" radius="3" death="15" speed="300"/>
+			 <round style="fill:#bdc3c7;" radius="5" death="10" speed="400"/>
+			 <ray style="fill:#bdc3c7;" radius="2" speed="800" death="3" lifespan="0" thickness="2">
+			 	<bullet style="fill:#bdc3c7;"/>
+			 </ray>
+		</gun>
+	</player>
+
+	<enemies>
+		<walker life="30" 
+			    width="30"
+			    height="25"
+			    angleDirRand="40"
+			    jumpMinDel="900" 
+			    jumpMaxDel="2500"
+			    jumpForce="300" />
+		<floater width="30"
+				 height="30"
+				 speed="500"
+				 movForce="30"/>
+	</enemies>
+</game>

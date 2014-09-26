@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="Minimalism" package="com.subfty.minimalism.Minimalism" version="1.0.0" company="Filip Loster" />
+	
+	<!-- output -->
+	<app main="com.subfty.minimalism.Main" file="Minimalism" path="bin" />
+	
+	<window background="#000000" fps="60" />
+	<window width="640" height="400" unless="mobile" />
+	<window orientation="landscape" vsync="true" antialiasing="0" if="cpp" />
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="nme" />
+	
+		<!-- assets -->
+	<icon path="assets/icons/nme.svg" />
+	
+	<assets rename="img"  path="assets/img" />
+	<assets rename="data" path="assets/data" />
+	<assets rename="fonts" path="assets/fonts" />
+	<assets rename="layouts" path="assets/layouts" include="*.svg" />
+	<assets rename="music" path="assets/music"  />
+	<assets rename="sounds" path="assets/sounds"  />
+	
+	<!-- DLLs -->
+	<ndll name="std" />
+	<ndll name="regexp" />
+	<ndll name="zlib" />
+	<ndll name="nme" haxelib="nme" />
+
+	<!-- Libs -->
+	<haxelib name="actuate"/>
+	<haxelib name="singleton"/>
+	<haxelib name="random"/>
+	<haxelib name="nape"/>
+	
+	<!-- optimize JS output -->
+	<haxeflag name="--dead-code-elimination" if="html5" />
+	<haxeflag name="--js-modern" if="html5" />
+	
+</project>
